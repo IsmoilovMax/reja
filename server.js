@@ -8,7 +8,7 @@ const http = require("http");
 const fs = require("fs");
 
 let user;
-fs.readFile("database/user.json", "utf8", (err, data) =>{
+fs.readFile("database/user.json", "UTF-8", (err, data) =>{
     if(err) {
         console.log("ERROR", err);
     } else {
@@ -17,7 +17,8 @@ fs.readFile("database/user.json", "utf8", (err, data) =>{
 });
 
 
-//1 kirish code: expressga kerib kelayotgan kodlar (pablik ochiq, ochib berish deyiladi)
+/*1 kirish code: expressga kerib kelayotgan kodlar 
+(pablik ochiq, ochib berish deyiladi)*/
 app.use(express.static("public"));
 //kerib kelayotgan  datani jsonga o'zgartirib beradi
 app.use(express.json());
