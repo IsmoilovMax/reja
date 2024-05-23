@@ -1,9 +1,28 @@
+
+/*B-TASK: 
+
+ ```Shunday function tuzing, u 1ta string parametrga ega bolsin, 
+    hamda osha stringda qatnashgan raqamlarni 
+    sonini bizga return qilsin.
+    MASALAN countDigits("ad2a54y79wet0sfgb9")
+    7ni return qiladi.```
+*/
+function countDigits(str) {
+    return str.split('')
+    .filter(char => !isNaN(char) && char !== ' ')
+    .length;
+}
+
+// Funksiyani chaqirish:
+console.log(countDigits("ad2a54y79wet0sfgb9"));  
+
+
 /* TASK A
 Shunday 2 parametrli function tuzing, 
 hamda birinchi parametrdagi letterni ikkinchi parametrdagi sozdan qatnashga sonini 
 return qilishi kerak boladi.
 MASALAN countLetter("e", "engineer") 3ni return qiladi.
-*/
+
 function countLetter(letter, word) {
     // Harf va so'zni kichik harflar bilan tenglab
     const lowerCaseLetter = letter.toLowerCase();
@@ -16,7 +35,7 @@ function countLetter(letter, word) {
 // Misol
 let natija = countLetter("S", "SeniorSoftwareEngineer");
 console.log(natija);
-
+*/
 
 //22 Asynchronus functionlarni qo'llash
 /*

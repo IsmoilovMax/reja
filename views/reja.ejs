@@ -20,7 +20,7 @@
           <div class="d-flex align-items-center">
             <input
               type="text"
-              name="item"
+              name="reja"
               autofocus
               autocomplete="off"
               style="flex: 1"
@@ -33,8 +33,24 @@
           </div>
         </form>
       </div>
-      <button id="clean-all" class="btn btn-danger" style="border-radius: 20px">
-        Hamma Rejalarni ochirish
+      <ul id="item-list" class="list-group">
+        <%items.map((item)=>{ %>
+            <li
+              class="list-group-item list-group-item-info d-flex align-items-center justify-content-between"
+            >
+              <span class="item-text"><%= item.reja%></span>
+              <div>
+                <button data-id="<%=item._id%>" class="edit-me btn btn-secondary btn-sm mr-1">
+                  O`zgartirish
+                </button>
+                <button data-id="<%=item._id%>" class="delete-me btn btn-danger btn-sm">Ochirish</button>
+              </div>
+            </li>
+
+        <% })%>
+      </ul>
+      <button id="clear-all" class="btn btn-danger" style="border-radius: 20px">
+        Hamma Rejalarni Ochirish
       </button>
     </div>
   </body>
