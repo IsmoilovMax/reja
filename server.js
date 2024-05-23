@@ -48,7 +48,7 @@ app.get('/author', (req, res) => {
 
  //malumotdi date basedan olish uchun
 app.get("/", function(req, res){
-    res.render("harid");
+    res.render("reja");
 });
 //http bizning core modulimiz
 //createServer(param) serverdi yasash uchun . parametr qabul qiladi
@@ -56,7 +56,7 @@ const server = http.createServer(app);
 //malum bir portga listen qildiramiz
 let PORT = 3000;
 server.listen(PORT, function() {
-    console.log(`The server is running successfully on port: ${PORT}`);
+    console.log(`The server is running successfully on port: ${PORT}, http://localhost:${PORT}`);
 });
 //npm start
 //npm i nodemon bundan keyin (npm run dev) ishlatish kere

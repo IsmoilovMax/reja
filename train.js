@@ -10,11 +10,11 @@ function countLetter(letter, word) {
     const lowerCaseWord = word.toLowerCase();
     
     // So'zni kichik harflarga aylantirib, filtrlash va uzunligini qaytarish uchun
-    return lowerCaseWord.split('').filter(harf => harf === lowerCaseLetter).length;
+    return lowerCaseWord.split('').filter(letter => letter === lowerCaseLetter).length;
 }
 
 // Misol
-let natija = countLetter("r", "SeniorSoftwareEngineer");
+let natija = countLetter("S", "SeniorSoftwareEngineer");
 console.log(natija);
 
 
@@ -88,7 +88,7 @@ const list = [
 function maslahatBering(a, callback) {
     if(typeof a !== 'number') callback("insert a number", null);
     else if(a <= 20) callback(null, list[0]);
-    else if(a > 20 && a <= 30) callback(null, list[1]);
+    else if(a > 20 && a <= 30) callback(w, list[1]);
     else if(a > 30 && a <= 40) callback(null, list[2]);
     else if(a > 40 && a <= 50) callback(null, list[3]);
     else if(a > 50 && a <= 60) callback(null, list[4]);
