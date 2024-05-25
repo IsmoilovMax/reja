@@ -2,18 +2,17 @@ console.log("FrontEnd JS ishga tushdi");
 
 let createField = document.getElementById("create-field");
 
-
 function itemTemplate(data) {
-    return `<li
+    return (`<li
     class="list-group-item list-group-item-info d-flex align-items-center justify-content-between">
-    <span class="item-text">${item.reja}</span>
+    <span class="item-text">${data.reja}</span>
     <div>
-      <button data-id="${item._id}" class="edit-me btn btn-secondary btn-sm mr-1">
-        Ozgartirish
+      <button data-id="${data._id}" class="edit-me btn btn-secondary btn-sm mr-1">
+        O'zgartirish
       </button>
-      <button data-id="${item._id}" class="delete-me btn btn-danger btn-sm">Ochirish</button>
+      <button data-id="${data._id}" class="delete-me btn btn-danger btn-sm">O'chirish</button>
     </div>
-  </li>`
+  </li>`);
 }
 
 document.getElementById("create-form").addEventListener("submit", function (e) {
@@ -36,7 +35,7 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
 document.addEventListener("click", function (e) {
   // Delete operation (assuming response is defined within the scope)
   if (e.target.classList.contains("delete-me")) {
-    if (confirm("Aniq ochirmoqchimisiz?")) {
+    if (confirm("Aniq o'chirmoqchimisiz?")) {
       axios.post("/delete-item", { id: e.target.getAttribute("data-id") })
         .then((response) => { 
           console.log("Item deleted successfully:", response.data);
