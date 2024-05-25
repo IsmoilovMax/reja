@@ -1,3 +1,59 @@
+/*MITASK-C 
+
+Shunday class tuzing tuzing nomi Shop, va uni constructoriga 3 hil mahsulot pass bolsin, hamda classning 3ta methodi bolsin, biri qoldiq, biri sotish va biri qabul. Har bir method ishga tushgan vaqt ham log qilinsin.
+MASALAN: const shop = new Shop(4, 5, 2); shop.qoldiq() return hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud! shop.sotish('non', 3) & shop.qabul('cola', 4) & shop.qoldiq() return hozir 20:50da 1ta non, 5ta lagmon va 6ta cola mavjud!
+*/
+
+
+class Shop {
+    constructor(non, lagmon, cola) {
+        this.mahsulotlar = {
+            non: non,
+            lagmon: lagmon,
+            cola: cola
+        };
+    }
+
+    hozirgiVaqt() {
+        const hozir = new Date();
+        const soat = hozir.getHours();
+        const daqiqa = hozir.getMinutes();
+        return `${soat < 10 ? '0' : ''}${soat}:${daqiqa < 10 ? '0' : ''}${daqiqa}`;
+    }
+
+    log(xabar) {
+        console.log(`Hozir ${this.hozirgiVaqt()} - ${xabar}`);
+    }
+
+    qoldiq() {
+        const xabar = `${this.mahsulotlar.non} ta non, ${this.mahsulotlar.lagmon} ta lagmon va ${this.mahsulotlar.cola} ta cola mavjud!`;
+        this.log(xabar);
+        return xabar;
+    }
+
+    sotish(mahsulot, miqdor) {
+        if (this.mahsulotlar[mahsulot] >= miqdor) {
+            this.mahsulotlar[mahsulot] -= miqdor;
+            this.log(`${miqdor} ta ${mahsulot} sotildi.`);
+        } else {
+            this.log(`${mahsulot} yetarli emas!`);
+        }
+    }
+
+    qabul(mahsulot, miqdor) {
+        this.mahsulotlar[mahsulot] += miqdor;
+        this.log(`${miqdor} ta ${mahsulot} qabul qilindi.`);
+    }
+}
+
+// Misol uchun foydalanish:
+const shop = new Shop(4, 5, 2);
+console.log(shop.qoldiq()); // Hozir 20:40 - 4 ta non, 5 ta lagmon va 2 ta cola mavjud!
+shop.sotish('non', 3); // Hozir 20:40 - 3 ta non sotildi.
+shop.qabul('cola', 4); // Hozir 20:40 - 4 ta cola qabul qilindi.
+console.log(shop.qoldiq()); // Hozir 20:40 - 1 ta non, 5 ta lagmon va 6 ta cola mavjud!
+
+
 
 /*B-TASK: 
 
@@ -6,7 +62,7 @@
     sonini bizga return qilsin.
     MASALAN countDigits("ad2a54y79wet0sfgb9")
     7ni return qiladi.```
-*/
+
 function countDigits(str) {
     return str.split('')
     .filter(char => !isNaN(char) && char !== ' ')
@@ -15,7 +71,7 @@ function countDigits(str) {
 
 // Funksiyani chaqirish:
 console.log(countDigits("ad2a54y79wet0sfgb9"));  
-
+*/
 
 /* TASK A
 Shunday 2 parametrli function tuzing, 

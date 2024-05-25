@@ -80,7 +80,7 @@ module.exports = app;
 
 //npm start
 //npm i nodemon bundan keyin (npm run dev) ishlatish kere
-//.gitignore=.+node_modules
+//gitignore=.+node_modules
 //git init
 //git status
 //git add .
