@@ -1,3 +1,5 @@
+
+
 console.log("FrontEnd JS ishga tushdi");
 
 let createField = document.getElementById("create-field");
@@ -46,10 +48,43 @@ document.addEventListener("click", function (e) {
         });
     }
   }
-
+  
   // Edit operation (placeholder for actual editing logic)
   if (e.target.classList.contains("edit-me")) {
     // Implement logic to fetch item data, display edit form, handle updates
-    alert("Edit functionality is not yet implemented.");
+    let userInput = prompt(
+      "O'zgartirish keriting", 
+      e.target.parentElement.parentElement
+      .querySelector(".item-text").innerHTML);
+    if(userInput) {
+      
+        axios
+          .post("/edit-item", {
+            id: e.target.getAttribute("data-id"),
+            new_input: userInput,
+        })
+        .then((response) => {
+          console.log(response.data);
+          e.target.parentElement.parentElement.querySelector(
+            ".item-text"
+          ).innerHTML = userInput;
+        })
+        .catch((err) => {
+          console.log("Iltimos qaytadan harakat qiling");
+        });
+    }
   }
+});
+
+document.getElementById("clear-all")
+    .addEventListener("click", function() {
+  axios
+    .post("/delete-all", { delete_all:true })
+    .then((response) =>{
+      alert(response.data.state);
+      document.location.reload(); 
+    })
+    .catch((err) => {
+      console.log("Iltimos qaytadan harakat qiling")
+    })
 });
