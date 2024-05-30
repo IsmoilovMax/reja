@@ -105,8 +105,8 @@ module.exports = app;
 //git status
 //git add .
 //git status
-//git commit -m "BRR:mavzu nomi"
-//git log --oneline
+//
+//git log git commit -m "BRR:mavzu nomi"--oneline
 //git status
 //git branch
 //git remote
