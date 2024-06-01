@@ -19,5 +19,5 @@ function hasDuplicateChars(str) {
 }
 
 // Misollar:
-console.log(hasDuplicateChars("welcome")); // false qaytadi
-console.log(hasDuplicateChars("Sound")); // true qaytadi
+console.log(hasDuplicateChars("welcome"));
+console.log(hasDuplicateChars("Sound")); 
