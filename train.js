@@ -1,23 +1,15 @@
+/*
+G-TASK:
 
-/*F-TASK: 
-
-Shunday findDoublers function tuzing, unga faqat bitta string argument pass bolib, agar stringda bir hil harf qatnashgan bolsa true, qatnashmasa false qaytarishi kerak.
-MASALAN: getReverse("hello") return true return qiladi
+Shunday function tuzingki unga integerlardan iborat array pass bolsin va function bizga osha arrayning eng katta qiymatiga tegishli birinchi indexni qaytarsin.
+    MASALAN: getHighestIndex([5, 21, 12, 21, 8]) return qiladi 1 sonini.
 */
 
-function hasDuplicateChars(str) {
-  for (let i = 0; i < str.length; i++) {
-      for (let j = i + 1; j < str.length; j++) {
-          if (str[i] === str[j]) {
-              console.log(`Takrorlangan belgi ${str[i]} indekslari: ${i} va ${j}`);
-              return true;
-          }
-      }
-  }
-  console.log("Takrorlangan belgi topilmadi");
-  return false;
+function getHighestIndex(arr) {
+    return arr.reduce((maxIndex, currentValue, currentIndex, array) =>
+        currentValue > array[maxIndex] ? currentIndex : maxIndex, 0);
 }
 
-// Misollar:
-console.log(hasDuplicateChars("welcome"));
-console.log(hasDuplicateChars("Sound")); 
+// Test
+const arr = [5, 11, 21, 31, 44];
+console.log(getHighestIndex(arr));
